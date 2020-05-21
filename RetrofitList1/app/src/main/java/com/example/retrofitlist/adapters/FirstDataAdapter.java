@@ -60,11 +60,14 @@ public class FirstDataAdapter extends BaseAdapter {
 
         TextView name = (TextView) convertView.findViewById(R.id.name);
         name.setText(list.get(position).getName());
+
+
         final String namee = list.get(position).getName();
-final int positionn = position;
+        final int positionn = position;
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageurl);
         Picasso.with(context).load(list.get(position).getImageurl()).into(imageView);
+
 
         layoutfirst = convertView.findViewById(R.id.layoutfirst);
         layoutfirst.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +75,7 @@ final int positionn = position;
             public void onClick(View v) {
                 Intent intent = new Intent(activity, MainActivity.class);
                 intent.putExtra("namee", namee);
-                intent.putExtra("position",positionn);
+                intent.putExtra("position", positionn);
                 activity.startActivity(intent);
 
             }
